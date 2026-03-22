@@ -123,13 +123,24 @@ Currently heads-down building **MiseOS**, a B2B SaaS platform that brings machin
 
 ---
 
-## 📊 GitHub Stats
+## 📊 Activity
 
 <div align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=ledaihoan&show_icons=true&theme=default&title_color=1A1F36&icon_color=4CAF50&text_color=3D4255&border_color=E8E4DE&bg_color=FAFAF7&hide_border=false&count_private=true" />
-  &nbsp;
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ledaihoan&layout=compact&theme=default&title_color=1A1F36&text_color=3D4255&border_color=E8E4DE&bg_color=FAFAF7&hide_border=false" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ledaihoan&bg_color=FAFAF7&color=1A1F36&line=4CAF50&point=FF6F00&area=true&area_color=4CAF50&hide_border=true" width="100%" alt="Contribution Graph"/>
 </div>
+
+<br/>
+
+**536 contributions last year** · mostly private repos (MiseOS infra, backend, frontend)
+
+```
+TypeScript / NestJS  █████████████████░░░░░░░░░░░░░░░░  42%
+React / NextJS       ████████████░░░░░░░░░░░░░░░░░░░░░  30%
+Rust                 ████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  10%
+Shell / DevOps       ███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   8%
+Vue                  ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   5%
+HTML / CSS           ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   5%
+```
 
 ---
 
