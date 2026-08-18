@@ -30,7 +30,7 @@ Most of what I build now is **multi-tenant B2B SaaS**: row-level tenancy, entitl
 | Project | What it is | Stack | Status |
 |---|---|---|---|
 | **[MiseOS](https://miseos.io)** | Multi-tenant kitchen-ops SaaS: recipe costing, nutrition compliance, inventory forecasting | NestJS · Next.js · PostgreSQL · Python/FastAPI · Go · k3s | In active development |
-| **[Latch](https://latch.craftthecode.dev)** | Two-sided property marketplace — buyer browse + agency dashboards, built in public | Next.js 16 · NestJS 11 · Prisma 7 · Postgres FTS · Leaflet | Live · [10 public ADRs](https://latch.craftthecode.dev/about-project) |
+| **[Latch](https://latch.craftthecode.dev)** | Two-sided property marketplace — buyer browse + agency dashboards, built in public | Next.js 16 · NestJS 11 · Prisma 7 · Postgres FTS · Leaflet | Live · [decision records published](https://latch.craftthecode.dev/about-project) |
 | **Guglu Homes** | Canada-wide MLS® real-estate marketplace, 175,000+ listings, web + native mobile | Next.js · NestJS · Flutter · PostgreSQL · Socket.IO | Live · client project |
 | **[EcoMall](https://ecomall.craftthecode.dev)** | Multi-vendor marketplace — per-vendor storefronts, cart, checkout, order tracking | Next.js · NestJS · PostgreSQL · Redis · Traefik | Live |
 | **[Termilo](https://github.com/craft-the-code/termilo)** | Local-first SSH terminal manager — no cloud sync, native performance | Tauri v2 (Rust) · React · TypeScript · xterm.js | Shipped · open source |
@@ -74,7 +74,7 @@ The system I spend most of my time on. A **15-repo** platform for professional k
 
 The part that doesn't show up in a language chart:
 
-- **Decision records over tribal knowledge** — 38 ADRs across MiseOS and Latch. Every non-obvious architectural call is written down with its trade-offs, including the ones argued and rejected. [Latch publishes its 10 openly.](https://latch.craftthecode.dev/about-project)
+- **Decision records over tribal knowledge** — 28 ADRs on MiseOS alone. Every non-obvious architectural call is written down with its trade-offs, including the ones argued and rejected. [Latch publishes its set openly](https://latch.craftthecode.dev/about-project), rejected alternatives included.
 - **Gates, not vibes** — ML accuracy, tenancy isolation, menu economics, allergen derivation and release smoke all run as CI suites against the deployed environment. A red gate blocks the release.
 - **Measured, not assumed** — benchmarked a dedicated search service against plain Postgres for Latch and shipped Postgres when it won: 3.9 ms indexed full-text search, and a listing page cut from 915 KB to 38 KB.
 - **Issue-first delivery** — small stacked merge requests over big-bang branches, so review stays possible.
