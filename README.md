@@ -33,7 +33,7 @@ I also run delivery the way a team should run it, even when the team is small. E
 |---|---|---|---|
 | **[MiseOS](https://miseos.io)** | Multi-tenant kitchen-ops SaaS: recipe costing, nutrition compliance, inventory forecasting | NestJS · Next.js · PostgreSQL · Python/FastAPI · Go · Docker Compose | In active development |
 | **[Latch](https://latch.craftthecode.dev)** | Two-sided property marketplace, buyer browse plus agency dashboards, built in public | Next.js 16 · NestJS 11 · Prisma 7 · Postgres FTS · Leaflet | Live, [decision records published](https://latch.craftthecode.dev/about-project) |
-| **Guglu Homes** | Canada-wide MLS® real-estate marketplace, 175,000+ listings, web and native mobile | Next.js · NestJS · Flutter · PostgreSQL · Socket.IO | Live, client project |
+| **[Guglu Homes](https://guglu.ca)** | Canada-wide MLS® real-estate marketplace, 175,000+ listings, web and native mobile | Next.js · NestJS · Flutter · PostgreSQL · Socket.IO | Live, client project |
 | **[EcoMall](https://ecomall.craftthecode.dev)** | Multi-vendor marketplace: per-vendor storefronts, cart, checkout, order tracking | Next.js · NestJS · PostgreSQL · Redis · Traefik | Live |
 | **[Termilo](https://github.com/craft-the-code/termilo)** | Local-first SSH terminal manager, no cloud sync, native performance | Tauri v2 (Rust) · React · TypeScript · xterm.js | Shipped, open source |
 
