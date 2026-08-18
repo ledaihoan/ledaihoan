@@ -5,7 +5,7 @@
 
 <!-- Typing SVG -->
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=17&duration=3200&pause=900&color=2E8B70&center=true&vCenter=true&multiline=false&width=560&lines=Backend+architecture+%C2%B7+NestJS+%C2%B7+PostgreSQL+%C2%B7+Go;Multi-tenant+SaaS+on+self-hosted+k3s;Decision+records%2C+CI+gates%2C+regression+suites;10%2B+years+shipping+production+systems" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=17&duration=3200&pause=900&color=2E8B70&center=true&vCenter=true&multiline=false&width=580&lines=Backend+architecture+%C2%B7+NestJS+%C2%B7+PostgreSQL+%C2%B7+Go;Multi-tenant+SaaS%2C+self-hosted+on+Docker+Compose;Decision+records%2C+CI+gates%2C+acceptance+sign-off;10%2B+years+shipping+production+systems" alt="Typing SVG" />
 </div>
 
 <br/>
@@ -14,13 +14,15 @@
 
 ## About
 
-Senior software engineer, 10+ years, focused on **high-performance distributed and data-driven systems**. I work end-to-end — Postgres schema design and NestJS APIs through to React dashboards, Go services, and the k3s cluster it all runs on.
+Senior software engineer, 10+ years, focused on **high-performance distributed and data-driven systems**. I work end to end: Postgres schema design and NestJS APIs through to React dashboards, Go services, and the Docker Compose stack it all runs on.
 
-Most of what I build now is **multi-tenant B2B SaaS**: row-level tenancy, entitlement enforcement, cost/nutrition calculation engines, and ML-assisted data pipelines. I run it the way a team should be run even when the team is small — architecture decision records, CI-enforced quality gates, and a functional regression suite that runs against the deployed environment.
+Most of what I build now is **multi-tenant B2B SaaS**: row-level tenancy, entitlement enforcement, cost and nutrition calculation engines, and ML-assisted data pipelines.
 
-- 🏗️ Building **[MiseOS](https://miseos.io)** — kitchen operations SaaS, in active development
-- 🏢 Studio work at **[craftthecode.dev](https://craftthecode.dev)** — client and reference builds
-- 🌏 **Hanoi, Vietnam** (GMT+7) · working with teams across US · EU · APAC
+I also run delivery the way a team should run it, even when the team is small. Everything lives on **GitLab** with roadmap planning, an architecture decision record or spec behind every non-obvious call, CI/CD guardrails on every merge request, and a written acceptance sign-off that a feature is not Done until its paired test suite runs green.
+
+- 🏗️ Building **[MiseOS](https://miseos.io)**, kitchen operations SaaS, in active development
+- 🏢 Studio and client work at **[craftthecode.dev](https://craftthecode.dev)**
+- 🌏 **Hanoi, Vietnam** (GMT+7), working with teams across US, EU and APAC
 - 💼 **Open to senior / staff engineering roles and select contract work**
 
 ---
@@ -29,15 +31,15 @@ Most of what I build now is **multi-tenant B2B SaaS**: row-level tenancy, entitl
 
 | Project | What it is | Stack | Status |
 |---|---|---|---|
-| **[MiseOS](https://miseos.io)** | Multi-tenant kitchen-ops SaaS: recipe costing, nutrition compliance, inventory forecasting | NestJS · Next.js · PostgreSQL · Python/FastAPI · Go · k3s | In active development |
-| **[Latch](https://latch.craftthecode.dev)** | Two-sided property marketplace — buyer browse + agency dashboards, built in public | Next.js 16 · NestJS 11 · Prisma 7 · Postgres FTS · Leaflet | Live · [decision records published](https://latch.craftthecode.dev/about-project) |
-| **Guglu Homes** | Canada-wide MLS® real-estate marketplace, 175,000+ listings, web + native mobile | Next.js · NestJS · Flutter · PostgreSQL · Socket.IO | Live · client project |
-| **[EcoMall](https://ecomall.craftthecode.dev)** | Multi-vendor marketplace — per-vendor storefronts, cart, checkout, order tracking | Next.js · NestJS · PostgreSQL · Redis · Traefik | Live |
-| **[Termilo](https://github.com/craft-the-code/termilo)** | Local-first SSH terminal manager — no cloud sync, native performance | Tauri v2 (Rust) · React · TypeScript · xterm.js | Shipped · open source |
+| **[MiseOS](https://miseos.io)** | Multi-tenant kitchen-ops SaaS: recipe costing, nutrition compliance, inventory forecasting | NestJS · Next.js · PostgreSQL · Python/FastAPI · Go · Docker Compose | In active development |
+| **[Latch](https://latch.craftthecode.dev)** | Two-sided property marketplace, buyer browse plus agency dashboards, built in public | Next.js 16 · NestJS 11 · Prisma 7 · Postgres FTS · Leaflet | Live, [decision records published](https://latch.craftthecode.dev/about-project) |
+| **Guglu Homes** | Canada-wide MLS® real-estate marketplace, 175,000+ listings, web and native mobile | Next.js · NestJS · Flutter · PostgreSQL · Socket.IO | Live, client project |
+| **[EcoMall](https://ecomall.craftthecode.dev)** | Multi-vendor marketplace: per-vendor storefronts, cart, checkout, order tracking | Next.js · NestJS · PostgreSQL · Redis · Traefik | Live |
+| **[Termilo](https://github.com/craft-the-code/termilo)** | Local-first SSH terminal manager, no cloud sync, native performance | Tauri v2 (Rust) · React · TypeScript · xterm.js | Shipped, open source |
 
 ---
 
-## MiseOS — architecture notes
+## MiseOS, architecture notes
 
 The system I spend most of my time on. A **15-repo** platform for professional kitchens.
 
@@ -46,11 +48,11 @@ The system I spend most of my time on. A **15-repo** platform for professional k
 
 **Engineering surface**
 
-- **Multi-tenant spine** — PostgreSQL row-level security, organization-owned resources, server-side entitlement enforcement
-- **Costing & nutrition engines** — recipe yield tracking, real-time plate cost against moving supplier prices, region-aware compliance labels (FDA · CFIA · EU)
-- **ML services** — ingredient categorizer and recipe-line parser (Python/FastAPI, spaCy, FAISS), accuracy gated in CI
-- **Ingestion pipeline** — Go orchestration layer (proxy rotation, caching, queueing) over stateless Python fetch workers
-- **Self-hosted infra** — k3s, CloudNativePG, HashiCorp Vault, GitLab CI/CD with per-deploy version pinning
+- **Multi-tenant spine.** PostgreSQL row-level security, organization-owned resources, entitlement limits enforced server side rather than decorating a pricing page
+- **Costing and nutrition engines.** Recipe yield tracking, real-time plate cost against moving supplier prices, region-aware compliance labels (FDA, CFIA, EU)
+- **ML services.** Ingredient categorizer and recipe-line parser in Python/FastAPI with spaCy and FAISS, accuracy gated as a CI suite
+- **Ingestion pipeline.** Go orchestration layer handling proxy rotation, caching and queueing over stateless Python fetch workers
+- **Self-hosted deployment.** Docker Compose across dev, staging and prod, fronted by nginx and Cloudflare, with GitLab CI/CD change detection so only touched services redeploy
 
 </td><td width="42%" valign="top">
 
@@ -72,12 +74,24 @@ The system I spend most of my time on. A **15-repo** platform for professional k
 
 ## How I engineer
 
-The part that doesn't show up in a language chart:
+The part that does not show up in a language chart. Every MiseOS and craftthecode project runs this way.
 
-- **Decision records over tribal knowledge** — 28 ADRs on MiseOS alone. Every non-obvious architectural call is written down with its trade-offs, including the ones argued and rejected. [Latch publishes its set openly](https://latch.craftthecode.dev/about-project), rejected alternatives included.
-- **Gates, not vibes** — ML accuracy, tenancy isolation, menu economics, allergen derivation and release smoke all run as CI suites against the deployed environment. A red gate blocks the release.
-- **Measured, not assumed** — benchmarked a dedicated search service against plain Postgres for Latch and shipped Postgres when it won: 3.9 ms indexed full-text search, and a listing page cut from 915 KB to 38 KB.
-- **Issue-first delivery** — small stacked merge requests over big-bang branches, so review stays possible.
+**Planned on GitLab, delivered issue first.** Roadmap to milestone to issue, with the board as the source of truth. Work arrives as small stacked merge requests rather than one big branch, so review stays possible.
+
+**Written down before it is built.** Every non-obvious architectural call gets an ADR or a spec, recorded with the alternatives that were rejected and why. A trade-off with no downside listed is usually one nobody thought about. 28 ADRs on MiseOS alone; [Latch publishes its set openly](https://latch.craftthecode.dev/about-project).
+
+**Four tiers of automated quality, wired into CI/CD:**
+
+| Tier | Runs | Covers |
+|---|---|---|
+| 0 | Every merge request | Lint, types, unit tests, build |
+| 1 | Nightly and pre-release | Regression suites against the deployed environment |
+| 2 | Before every `develop → main` | Release smoke |
+| 3 | After deploy | Production verification |
+
+**Acceptance sign-off, not just a merge.** Each delivery names the suite that accepts it, planned up front alongside the spec as unit, integration, e2e or regression coverage. A feature is not Done when it merges. It is Done when that named suite is green in CI on a run you can link, and the board move carries the pipeline URL. I wrote that ledger after finding 50 issues marked Done whose accepting suites had never run.
+
+**Measured, not assumed.** For Latch I benchmarked a dedicated search service against plain Postgres and shipped Postgres when it won: 3.9 ms indexed full-text search, and a listing page cut from 915 KB to 38 KB.
 
 ---
 
@@ -104,11 +118,12 @@ The part that doesn't show up in a language chart:
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 
-**Infrastructure** &nbsp;
-![k3s](https://img.shields.io/badge/k3s-FFC61C?style=flat-square&logo=kubernetes&logoColor=black)
+**Infrastructure and delivery** &nbsp;
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Vault](https://img.shields.io/badge/Vault-FFEC6E?style=flat-square&logo=vault&logoColor=black)
-![GitLab CI](https://img.shields.io/badge/GitLab%20CI-FC6D26?style=flat-square&logo=gitlab&logoColor=white)
+![Docker Compose](https://img.shields.io/badge/Compose-2496ED?style=flat-square&logo=docker&logoColor=white)
+![GitLab CI](https://img.shields.io/badge/GitLab%20CI%2FCD-FC6D26?style=flat-square&logo=gitlab&logoColor=white)
+![nginx](https://img.shields.io/badge/nginx-009639?style=flat-square&logo=nginx&logoColor=white)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 
 </div>
@@ -122,7 +137,7 @@ The part that doesn't show up in a language chart:
 </div>
 
 <!-- STATS:START -->
-<!-- Auto-generated by .github/workflows/stats.yml — do not edit by hand. -->
+<!-- Auto-generated by .github/workflows/stats.yml, do not edit by hand. -->
 | Contributions (last year) | Active days | Longest streak | Busiest day |
 |---|---|---|---|
 | **1,834** | 174 | 19 days | 86 on 2026-07-21 |
@@ -133,7 +148,7 @@ The part that doesn't show up in a language chart:
 > **Note:** my primary day-to-day repositories are **self-hosted on GitLab** (MiseOS, craft-the-code),
 > so the graph above reflects only the GitHub-hosted share of my work.
 
-**Languages by lines of code** — measured across 25 active repositories, August 2026:
+**Languages by lines of code**, measured across 25 active repositories, August 2026:
 
 ```
 TypeScript    ██████████████████████████░░░░░░░  79.2%
