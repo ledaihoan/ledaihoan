@@ -1,162 +1,165 @@
 <!-- Header wave -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=1A1F36,4CAF50&height=140&section=header&text=Hoan%20Le&fontSize=42&fontColor=ffffff&fontAlignY=55&animation=fadeIn&desc=Full%20Stack%20Engineer%20%7C%20Builder%20%7C%20Open%20Source&descAlignY=78&descSize=16" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=111111,1F6F5C&height=150&section=header&text=Hoan%20Le&fontSize=44&fontColor=ffffff&fontAlignY=52&animation=fadeIn&desc=Senior%20Full-Stack%20Engineer%20%C2%B7%20Distributed%20%26%20Data-Driven%20Systems&descAlignY=76&descSize=15" width="100%"/>
 </div>
 
 <!-- Typing SVG -->
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=18&duration=3000&pause=1000&color=4CAF50&center=true&vCenter=true&multiline=false&width=500&lines=Building+MiseOS+%F0%9F%8D3+Kitchen+Intelligence;Open+source+%E2%86%92+github%2Fcraft-the-code;Writing+at+craftthecode.dev;NestJS+%7C+NextJS+%7C+k3s+%7C+Rust" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=17&duration=3200&pause=900&color=2E8B70&center=true&vCenter=true&multiline=false&width=560&lines=Backend+architecture+%C2%B7+NestJS+%C2%B7+PostgreSQL+%C2%B7+Go;Multi-tenant+SaaS+on+self-hosted+k3s;Decision+records%2C+CI+gates%2C+regression+suites;10%2B+years+shipping+production+systems" alt="Typing SVG" />
 </div>
 
 <br/>
 
 ---
 
-## 🧑‍💻 About Me
+## About
 
-Full-stack engineer with deep roots in backend architecture, DevOps, and product engineering. I build things end-to-end — from k3s infrastructure and NestJS APIs to React dashboards and CLI tools.
+Senior software engineer, 10+ years, focused on **high-performance distributed and data-driven systems**. I work end-to-end — Postgres schema design and NestJS APIs through to React dashboards, Go services, and the k3s cluster it all runs on.
 
-Currently heads-down building **MiseOS**, a B2B SaaS platform that brings machine learning to professional kitchen operations.
+Most of what I build now is **multi-tenant B2B SaaS**: row-level tenancy, entitlement enforcement, cost/nutrition calculation engines, and ML-assisted data pipelines. I run it the way a team should be run even when the team is small — architecture decision records, CI-enforced quality gates, and a functional regression suite that runs against the deployed environment.
 
-- 🍳 Founder & builder — [MiseOS](https://miseos.io) · Kitchen intelligence, engineered
-- 🖥️ Open source — [Termilo](https://github.com/craft-the-code/termilo) · Privacy-first SSH terminal manager
-- ✍️ Writing about engineering at [craftthecode.dev](https://craftthecode.dev)
-- 🌏 Based in Hanoi, Vietnam · Building for US · AU · UK · EU markets
+- 🏗️ Building **[MiseOS](https://miseos.io)** — kitchen operations SaaS, in active development
+- 🏢 Studio work at **[craftthecode.dev](https://craftthecode.dev)** — client and reference builds
+- 🌏 **Hanoi, Vietnam** (GMT+7) · working with teams across US · EU · APAC
+- 💼 **Open to senior / staff engineering roles and select contract work**
 
 ---
 
-## 🚀 Current Focus — MiseOS
+## Selected Work
+
+| Project | What it is | Stack | Status |
+|---|---|---|---|
+| **[MiseOS](https://miseos.io)** | Multi-tenant kitchen-ops SaaS: recipe costing, nutrition compliance, inventory forecasting | NestJS · Next.js · PostgreSQL · Python/FastAPI · Go · k3s | In active development |
+| **[Latch](https://latch.craftthecode.dev)** | Two-sided property marketplace — buyer browse + agency dashboards, built in public | Next.js 16 · NestJS 11 · Prisma 7 · Postgres FTS · Leaflet | Live · [10 public ADRs](https://latch.craftthecode.dev/about-project) |
+| **Guglu Homes** | Canada-wide MLS® real-estate marketplace, 175,000+ listings, web + native mobile | Next.js · NestJS · Flutter · PostgreSQL · Socket.IO | Live · client project |
+| **[EcoMall](https://ecomall.craftthecode.dev)** | Multi-vendor marketplace — per-vendor storefronts, cart, checkout, order tracking | Next.js · NestJS · PostgreSQL · Redis · Traefik | Live |
+| **[Termilo](https://github.com/craft-the-code/termilo)** | Local-first SSH terminal manager — no cloud sync, native performance | Tauri v2 (Rust) · React · TypeScript · xterm.js | Shipped · open source |
+
+---
+
+## MiseOS — architecture notes
+
+The system I spend most of my time on. A **15-repo** platform for professional kitchens.
 
 <table>
-<tr>
-<td width="60%">
+<tr><td width="58%">
 
-**MiseOS** is the operating system for professional kitchens.
+**Engineering surface**
 
-- 🤖 AI ingredient categorization — 95%+ accuracy
-- 🧬 Auto nutrition analysis (FDA · CFIA · EU compliance)
-- 💰 Real-time recipe costing with yield tracking
-- 📦 ML-powered inventory forecasting
-- 🏗️ Self-hosted k3s infrastructure, multi-tenant architecture
+- **Multi-tenant spine** — PostgreSQL row-level security, organization-owned resources, server-side entitlement enforcement
+- **Costing & nutrition engines** — recipe yield tracking, real-time plate cost against moving supplier prices, region-aware compliance labels (FDA · CFIA · EU)
+- **ML services** — ingredient categorizer and recipe-line parser (Python/FastAPI, spaCy, FAISS), accuracy gated in CI
+- **Ingestion pipeline** — Go orchestration layer (proxy rotation, caching, queueing) over stateless Python fetch workers
+- **Self-hosted infra** — k3s, CloudNativePG, HashiCorp Vault, GitLab CI/CD with per-deploy version pinning
 
-**Stack:** NestJS · NextJS · PostgreSQL (RLS) · k3s · HashiCorp Vault · CloudNativePG
+</td><td width="42%" valign="top">
 
-</td>
-<td width="40%" align="center">
+**By the numbers**
 
-[![MiseOS](https://img.shields.io/badge/miseos.io-Visit-1A1F36?style=for-the-badge&logoColor=4CAF50)](https://miseos.io)
+| | |
+|---|---|
+| Repos | 15 |
+| Architecture decision records | 28 |
+| Schema migrations | 30 |
+| Backend test specs | 85 |
+| Frontend test files | 42 |
+| Regression suites vs. deployed env | 13 |
 
-[![GitHub org](https://img.shields.io/badge/github%2FMiseOS-Org-4CAF50?style=for-the-badge&logo=github)](https://github.com/MiseOS)
-
-</td>
-</tr>
+</td></tr>
 </table>
 
 ---
 
-## 🛠️ Open Source — Termilo
+## How I engineer
 
-<table>
-<tr>
-<td width="60%">
+The part that doesn't show up in a language chart:
 
-**[Termilo](https://github.com/craft-the-code/termilo)** — Modern, privacy-focused SSH terminal manager
-
-- 🔒 Local-first — all data on your machine, no cloud sync
-- 🗂️ Multi-session tabbed interface with persistent state
-- ⚡ Native performance via Tauri (Rust backend)
-- 🖥️ Powered by xterm.js — full color, resize, copy/paste
-
-**Stack:** React · TypeScript · Tauri v2 (Rust) · xterm.js · Zustand
-
-</td>
-<td width="40%" align="center">
-
-[![Termilo](https://img.shields.io/badge/craft--the--code%2Ftermilo-View-1A1F36?style=for-the-badge&logo=github)](https://github.com/craft-the-code/termilo)
-
-![TypeScript](https://img.shields.io/badge/TypeScript-89.8%25-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Rust](https://img.shields.io/badge/Rust-6.5%25-CE422B?style=flat-square&logo=rust&logoColor=white)
-
-</td>
-</tr>
-</table>
+- **Decision records over tribal knowledge** — 38 ADRs across MiseOS and Latch. Every non-obvious architectural call is written down with its trade-offs, including the ones argued and rejected. [Latch publishes its 10 openly.](https://latch.craftthecode.dev/about-project)
+- **Gates, not vibes** — ML accuracy, tenancy isolation, menu economics, allergen derivation and release smoke all run as CI suites against the deployed environment. A red gate blocks the release.
+- **Measured, not assumed** — benchmarked a dedicated search service against plain Postgres for Latch and shipped Postgres when it won: 3.9 ms indexed full-text search, and a listing page cut from 915 KB to 38 KB.
+- **Issue-first delivery** — small stacked merge requests over big-bang branches, so review stays possible.
 
 ---
 
-## 📝 Latest from craftthecode.dev
-
-<!-- BLOG-POST-LIST:START -->
-<!-- This section is auto-updated by GitHub Actions — see .github/workflows/blog-feed.yml -->
-<!-- BLOG-POST-LIST:END -->
-
-> ✍️ I write about backend architecture, DevOps, open source, and building products as an indie engineer.
-> → [Read all articles](https://craftthecode.dev/articles)
-
----
-
-## 🧰 Tech Stack
+## Tech Stack
 
 <div align="center">
 
-**Backend**
-
+**Backend** &nbsp;
 ![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+
+**Data** &nbsp;
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![Rust](https://img.shields.io/badge/Rust-CE422B?style=flat-square&logo=rust&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
 
-**Frontend**
-
+**Frontend** &nbsp;
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 
-**Infrastructure**
-
-![Kubernetes](https://img.shields.io/badge/k3s-FFC61C?style=flat-square&logo=kubernetes&logoColor=black)
-![Vault](https://img.shields.io/badge/Vault-FFEC6E?style=flat-square&logo=vault&logoColor=black)
+**Infrastructure** &nbsp;
+![k3s](https://img.shields.io/badge/k3s-FFC61C?style=flat-square&logo=kubernetes&logoColor=black)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Vault](https://img.shields.io/badge/Vault-FFEC6E?style=flat-square&logo=vault&logoColor=black)
+![GitLab CI](https://img.shields.io/badge/GitLab%20CI-FC6D26?style=flat-square&logo=gitlab&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 
 </div>
 
 ---
 
-## 📊 Activity
+## Activity
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ledaihoan&bg_color=FAFAF7&color=1A1F36&line=4CAF50&point=FF6F00&area=true&area_color=4CAF50&hide_border=true" width="100%" alt="Contribution Graph"/>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ledaihoan&bg_color=00000000&color=1F6F5C&line=2E8B70&point=111111&area=true&area_color=2E8B70&hide_border=true" width="100%" alt="Contribution Graph"/>
 </div>
 
-<br/>
+<!-- STATS:START -->
+<!-- Auto-generated by .github/workflows/stats.yml — do not edit by hand. -->
+| Contributions (last year) | Active days | Longest streak | Busiest day |
+|---|---|---|---|
+| **1,834** | 174 | 19 days | 86 on 2026-07-21 |
 
-**536 contributions last year** · mostly private repos (MiseOS infra, backend, frontend)
+<sub>Last updated 2026-08-18. Includes private contributions.</sub>
+<!-- STATS:END -->
+
+> **Note:** my primary day-to-day repositories are **self-hosted on GitLab** (MiseOS, craft-the-code),
+> so the graph above reflects only the GitHub-hosted share of my work.
+
+**Languages by lines of code** — measured across 25 active repositories, August 2026:
 
 ```
-TypeScript / NestJS  █████████████████░░░░░░░░░░░░░░░░  42%
-React / NextJS       ████████████░░░░░░░░░░░░░░░░░░░░░  30%
-Rust                 ████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  10%
-Shell / DevOps       ███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   8%
-Vue                  ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   5%
-HTML / CSS           ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   5%
+TypeScript    ██████████████████████████░░░░░░░  79.2%
+Go            ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   4.7%
+Python        ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   4.6%
+JavaScript    █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   3.8%
+Infra / CI    █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   3.2%
+CSS           █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   2.6%
+Shell         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   1.0%
 ```
 
 ---
 
-## 🔗 Connect
+## Connect
 
 <div align="center">
 
-[![Blog](https://img.shields.io/badge/craftthecode.dev-1A1F36?style=for-the-badge&logoColor=4CAF50)](https://craftthecode.dev)
+[![Website](https://img.shields.io/badge/craftthecode.dev-111111?style=for-the-badge&logoColor=white)](https://craftthecode.dev)
 &nbsp;
-[![MiseOS](https://img.shields.io/badge/MiseOS-miseos.io-4CAF50?style=for-the-badge)](https://miseos.io)
+[![MiseOS](https://img.shields.io/badge/MiseOS-miseos.io-1F6F5C?style=for-the-badge)](https://miseos.io)
 &nbsp;
-[![craft-the-code](https://img.shields.io/badge/Open%20Source-craft--the--code-FF6F00?style=for-the-badge&logo=github)](https://github.com/craft-the-code)
+[![Open Source](https://img.shields.io/badge/Open%20Source-craft--the--code-111111?style=for-the-badge&logo=github)](https://github.com/craft-the-code)
 
 </div>
 
 <!-- Footer wave -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=4CAF50,1A1F36&height=100&section=footer" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=1F6F5C,111111&height=100&section=footer" width="100%"/>
 </div>
