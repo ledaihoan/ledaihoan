@@ -142,7 +142,7 @@ The part that does not show up in a language chart. Every MiseOS and craftthecod
 |---|---|---|---|
 | **1,915** | 178 | 19 days | 86 on 2026-07-21 |
 
-<sub>Last updated 2026-08-24. Includes private contributions.</sub>
+<sub>Last updated 2026-08-31. Includes private contributions.</sub>
 <!-- STATS:END -->
 
 > **Note:** my primary day-to-day repositories are **self-hosted on GitLab** (MiseOS, craft-the-code),
